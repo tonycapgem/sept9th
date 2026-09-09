@@ -2,6 +2,7 @@ package com.example.demo.service;
 
 import com.example.demo.model.Customer;
 import com.example.demo.respository.CustomerRepository;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -17,7 +18,7 @@ public class CustomerServiceImpl implements CustomerService {
     public void createCustomer(Customer customer) {
         System.out.println("in the servic eimple class");
 
-        if(customer.getFirstName() == null) {
+        if(StringUtils.isEmpty(customer.getFirstName())) {
             throw new IllegalArgumentException("not good");
         }
         customerRepository.save(customer);

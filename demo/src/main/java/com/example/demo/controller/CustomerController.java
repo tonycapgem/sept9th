@@ -29,7 +29,7 @@ public class CustomerController {
         System.out.println("In Customer Controller");
     }
 
-    @GetMapping("/customer")
+    @GetMapping("/customer/{id}")
     public void getCustomerDetails(){
         System.out.println("In Customer Controller");
     }
