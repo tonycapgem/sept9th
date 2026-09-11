@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class CustomerServiceImpl implements CustomerService {
-
+//actual impl of customerservice which has create customer and is a customerrepo
     private final CustomerRepository customerRepository;
 
     public CustomerServiceImpl(CustomerRepository customerRepository) {
@@ -24,6 +24,8 @@ public class CustomerServiceImpl implements CustomerService {
         customerRepository.save(customer);
     }
 
-
-
+    @Override
+    public Customer getCustomerDetails(Integer id) {
+        return customerRepository.findById(id).orElse(null);
+    }
 }
